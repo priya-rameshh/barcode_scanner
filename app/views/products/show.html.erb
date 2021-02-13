@@ -1,0 +1,9 @@
+<h1 class='text-center'><%= @product.name %></h1>
+<h2 class='text-center'><small><%= @product.prize %></small></h2>
+<br/>
+<%= content_tag :p do %>
+  <%= image_tag @product.barcode_data_url, class: 'img-responsive', width: 640, height: 480 %>
+<% end if @product.barcode_data_url.present? %>
+
+<%= link_to 'Edit', edit_product_path(@product) %> |
+<%= link_to 'Back', products_path %>
